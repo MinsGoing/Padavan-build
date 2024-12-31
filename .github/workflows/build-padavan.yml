@@ -40,7 +40,7 @@ jobs:
         fi
     - name: Clone source code
       env:
-        KERNEL: 4.4
+        KERNEL: 3.4
       run: |
         if [ $KERNEL = "4.4" ] ; then
         git clone --depth=1 https://github.com/MinsGoing/padavan-4.4.git /opt/rt-n56u
@@ -107,7 +107,7 @@ jobs:
         else
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> configs/templates/$TNAME.config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> configs/templates/$TNAME.config #SCUTCLIENT
-        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=y" >> configs/templates/$TNAME.config #SS plus+
+        echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> configs/templates/$TNAME.config #SS plus+
         echo "CONFIG_FIRMWARE_INCLUDE_SSOBFS=n" >> configs/templates/$TNAME.config # simple-obfs混淆插件
         echo "CONFIG_FIRMWARE_INCLUDE_SSSERVER=n" >> configs/templates/$TNAME.config #SS server
         echo "CONFIG_FIRMWARE_INCLUDE_DNSFORWARDER=n" >> configs/templates/$TNAME.config #DNSFORWARDER
@@ -115,8 +115,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> configs/templates/$TNAME.config #内网穿透FRPC
         echo "CONFIG_FIRMWARE_INCLUDE_FRPS=n" >> configs/templates/$TNAME.config #内网穿透FRPS
         echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >> configs/templates/$TNAME.config #TUNSAFE
-        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=n" >> configs/templates/$TNAME.config #阿里DDNS
-        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=y" >> configs/templates/$TNAME.config #smartdns
+        echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> configs/templates/$TNAME.config #阿里DDNS
+        echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> configs/templates/$TNAME.config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=y" >> configs/templates/$TNAME.config #smartdns二进制文件
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=y" >> configs/templates/$TNAME.config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=n" >> configs/templates/$TNAME.config #集成trojan执行文件(1.1M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
