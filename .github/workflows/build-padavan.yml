@@ -43,7 +43,7 @@ jobs:
         KERNEL: 4.4
       run: |
         if [ $KERNEL = "4.4" ] ; then
-        git clone --depth=1 https://github.com/hanwckf/padavan-4.4.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/MinsGoing/padavan-4.4.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
 
         # (Recommend) Download prebuilt toolchain for x86_64 or aarch64 host
@@ -52,7 +52,7 @@ jobs:
         # or build toolchain with crosstool-ng
         # ./build_toolchain
         else
-        git clone --depth=1 https://github.com/hanwckf/rt-n56u.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/MinsGoing/rt-n56u.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         fi
